@@ -1,5 +1,5 @@
 === Instagram Post ===
-Contributors: jfadev
+Contributors: @jfadev
 Donate link: https://jordifernandes.com/donate/
 Tags: Instagram
 Requires at least: 4.7
@@ -34,6 +34,7 @@ Access the post's JSON at the following endpoint:
   "timestamp": "2020-12-14T20:12:36+0000"
 }
 ```
+== Frequently Asked Questions ==
 
 == Screenshots ==
 
@@ -43,3 +44,5 @@ Access the post's JSON at the following endpoint:
 
 = 1.0.0 =
 This is the first version.
+
+== Upgrade Notice ==
