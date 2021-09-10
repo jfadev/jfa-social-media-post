@@ -5,9 +5,9 @@ This WordPress plugin allows you to retrieve a specific Instagram post and consu
 ## Install
 
 - Download the plugin from Github repository:
-https://github.com/jfadev/jfa-wp-ig-post/archive/refs/heads/main.zip
+https://github.com/jfadev/jfa-ig-post/archive/refs/heads/main.zip
 
-- Upload the `jfa-wp-ig-post.zip` file to your Wordpress:
+- Upload the `jfa-ig-post.zip` file to your Wordpress:
 https://yoursite.com/wp-admin/plugin-install.php
 
 - Activate the plugin.
