@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Plugin Name: Instagram Post
- * Plugin URI: https://jordifernandes.com/jfa-wp-instagram-post
+ * Plugin Name: WP IG Post
+ * Plugin URI: https://jordifernandes.com/jfa-wp-ig-post
  * Description: This WordPress plugin allows you to retrieve a specific Instagram post and consume it via the REST API.
  * Version: 1.0
  * Author: Jordi Fernandes Alves
@@ -145,11 +145,11 @@ function api_instagram_post_post()
 function instagram_post_settings_get($from_api = false)
 {
   $pre = $from_api ? '' : '../';
-  $json = file_get_contents($pre . 'wp-content/plugins/jfa-wp-instagram-post/data.json');
+  $json = file_get_contents($pre . 'wp-content/plugins/jfa-wp-ig-post/data.json');
   return json_decode($json);
 }
 
 function instagram_post_settings_set($obj)
 {
-  file_put_contents('wp-content/plugins/jfa-wp-instagram-post/data.json', json_encode($obj));
+  file_put_contents('wp-content/plugins/jfa-wp-ig-post/data.json', json_encode($obj));
 }
