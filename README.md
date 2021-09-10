@@ -1,20 +1,20 @@
-# jfa-wp-instagram-post
+# jfa-wp-ig-post (Wp Instagram Post)
 
 This WordPress plugin allows you to retrieve a specific Instagram post and consume it via the REST API.
 
 ## Install
 
 - Download the plugin from Github repository:
-https://github.com/jfadev/jfa-wp-instagram-post/archive/refs/heads/main.zip
+https://github.com/jfadev/jfa-wp-ig-post/archive/refs/heads/main.zip
 
-- Upload the `jfa-wp-instagram-post.zip` file to your Wordpress:
+- Upload the `jfa-wp-ig-post.zip` file to your Wordpress:
 https://yoursite.com/wp-admin/plugin-install.php
 
 - Activate the plugin.
 
 - Click on Instagram Post menu button:
 
-![Instagram Post](menu.jpg?raw=true "Instagram Post")
+![Wp Instagram Post](menu.jpg?raw=true "Wp Instagram Post")
 
 ## Config
 
@@ -25,7 +25,7 @@ For example:
 
 ## Screenshot
 
-![Instagram Post](screenshot.jpg?raw=true "Instagram Post")
+![Wp Instagram Post](screenshot.jpg?raw=true "Wp Instagram Post")
 
 ## Endpoint
 

@@ -1,4 +1,4 @@
-=== Instagram Post ===
+=== WP IG Post ===
 Contributors: @jfadev
 Donate link: https://jordifernandes.com/donate/
 Tags: Instagram
@@ -7,7 +7,7 @@ Tested up to: 5.4
 Stable tag: 4.3
 Requires PHP: 7.0
 License: MIT License
-License URI: https://github.com/jfadev/jfa-wp-instagram-post/blob/main/LICENSE
+License URI: https://github.com/jfadev/jfa-wp-ig-post/blob/main/LICENSE
 
 This WordPress plugin allows you to retrieve a specific Instagram post and consume it via the REST API.
 
