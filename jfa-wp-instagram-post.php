@@ -145,11 +145,11 @@ function api_instagram_post_post()
 function instagram_post_settings_get($from_api = false)
 {
   $pre = $from_api ? '' : '../';
-  $json = file_get_contents($pre . 'wp-content/plugins/instagram_post.json');
+  $json = file_get_contents($pre . 'wp-content/plugins/jfa-wp-instagram-post/data.json');
   return json_decode($json);
 }
 
 function instagram_post_settings_set($obj)
 {
-  file_put_contents('wp-content/plugins/instagram_post.json', json_encode($obj));
+  file_put_contents('wp-content/plugins/jfa-wp-instagram-post/data.json', json_encode($obj));
 }
