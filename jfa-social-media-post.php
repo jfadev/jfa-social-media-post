@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Plugin Name: Jfa IG Post
- * Plugin URI: https://jordifernandes.com/jfa-ig-post
+ * Plugin Name: Jfa Social Media Post
+ * Plugin URI: https://jordifernandes.com/jfa-social-media-post/
  * Description: This WordPress plugin allows you to retrieve a specific Instagram post and consume it via the REST API.
  * Version: 1.0
  * Author: Jordi Fernandes Alves
@@ -14,11 +14,11 @@
  */
 add_action('admin_menu', function () {
   add_menu_page(
-    'Instagram Post',
-    'Instagram Post',
+    'Jfa Social Media Post',
+    'Social Post',
     'publish_posts', //'manage_options', // https://wordpress.org/support/article/roles-and-capabilities/
-    'instagram_post',
-    'admin_instagram_post_page',
+    'social_media_post',
+    'admin_social_media_post_page',
     'dashicons-instagram'
   );
 });
@@ -26,19 +26,19 @@ add_action('admin_menu', function () {
 /**
  * Admin page
  */
-function admin_instagram_post_page()
+function admin_social_media_post_page()
 {
-  $settings = instagram_post_settings_get();
+  $settings = social_media_post_settings_get();
 ?>
   <div class="wrap">
     <h1 class="wp-heading-inline">
-      Instagram Post
+      Jfa Social Media Post
     </h1>
     <p>This plugin allows you to retrieve a specific Instagram post.</p>
     <div style="padding:10px;">
       <div style="display:grid;grid-template-columns:repeat(3, 1fr);grid-gap:10px;grid-auto-rows:minmax(100px, auto);">
         <div style="grid-column:1/3;grid-row:1;">
-          <form id="instagram-post-form" method="post" action="/wp-json/api/v2/instagram_post/settings/">
+          <form id="instagram-post-form" method="post" action="/wp-json/api/v2/social_media_post/settings/">
             <h2>Config</h2>
             <p>
               Enter the API URL of the <a href="https://instant-tokens.com" target="_blank">instant-tokens.com</a> instagram account<br>
@@ -59,11 +59,14 @@ function admin_instagram_post_page()
               Save changes
             </button>
           </form>
-          <h2>Endpoint:</h2>
+          <h2>Endpoint</h2>
           <p>Access the post's JSON at the following endpoint.</p>
-          <p><code>/wp-json/api/v2/instagram_post/post/</code></p>
+          <p><code>/wp-json/api/v2/social_media_post/post/</code> <a href="/wp-json/api/v2/social_media_post/post/" target="_blank">view</a></p>
           <p>Return:<br>
-            <code>{"permalink":"", "caption":"", "media_url":"", "url_token":"", "username":"", "timestamp":""}</code>
+          <code>{"permalink":"", "caption":"", "media_url":"", "url_token":"", "username":"", "timestamp":""}</code>
+          <h2>Info</h2>
+          Homepage: <a href="https://jordifernandes.com/jfa-social-media-post/" target="_blank">https://jordifernandes.com/jfa-social-media-post/</a><br> 
+          Donate: <a href="https://jordifernandes.com/donate/" target="_blank">https://jordifernandes.com/donate/</a><br>
         </div>
         <div style="grid-column:3;grid-row:1;">
           <?php if ($settings && $settings->media_url) { ?>
@@ -92,13 +95,13 @@ function admin_instagram_post_page()
  * Add endpoint to save config
  */
 add_action('rest_api_init', function () {
-  register_rest_route('api/v2', '/instagram_post/settings/', [
+  register_rest_route('api/v2', '/social_media_post/settings/', [
     'methods' => 'POST',
-    'callback' => 'api_instagram_post_settings'
+    'callback' => 'api_social_media_post_settings'
   ]);
 });
 
-function api_instagram_post_settings($data)
+function api_social_media_post_settings($data)
 {
   if ($data['permalink'] && $data['url_token']) {
     $access_token = file_get_contents($data['url_token']);
@@ -121,7 +124,7 @@ function api_instagram_post_settings($data)
       'username' => $post->username,
       'timestamp' => $post->timestamp,
     ];
-    instagram_post_settings_set($settings);
+    social_media_post_settings_set($settings);
     header("Location: {$_SERVER['HTTP_REFERER']}");
     exit;
   }
@@ -131,25 +134,25 @@ function api_instagram_post_settings($data)
  * Add endpoint to retrieve post json
  */
 add_action('rest_api_init', function () {
-  register_rest_route('api/v2', '/instagram_post/post/', [
+  register_rest_route('api/v2', '/social_media_post/post/', [
     'methods' => 'GET',
-    'callback' => 'api_instagram_post_post'
+    'callback' => 'api_social_media_post_post'
   ]);
 });
 
-function api_instagram_post_post()
+function api_social_media_post_post()
 {
-  return instagram_post_settings_get(true);
+  return social_media_post_settings_get(true);
 }
 
-function instagram_post_settings_get($from_api = false)
+function social_media_post_settings_get($from_api = false)
 {
   $pre = $from_api ? '' : '../';
-  $json = file_get_contents($pre . 'wp-content/plugins/jfa-ig-post/data.json');
+  $json = file_get_contents($pre . 'wp-content/plugins/jfa-social-media-post/data.json');
   return json_decode($json);
 }
 
-function instagram_post_settings_set($obj)
+function social_media_post_settings_set($obj)
 {
-  file_put_contents('wp-content/plugins/jfa-ig-post/data.json', json_encode($obj));
+  file_put_contents('wp-content/plugins/jfa-social-media-post/data.json', json_encode($obj));
 }

@@ -1,20 +1,27 @@
-# jfa-ig-post (Jfa Instagram Post)
+# jfa-social-media-post (Jfa Social Media Post)
 
 This WordPress plugin allows you to retrieve a specific Instagram post and consume it via the REST API.
+Homepage: [https://jordifernandes.com/jfa-social-media-post/](https://jordifernandes.com/jfa-social-media-post/)
 
 ## Install
 
-- Download the plugin from Github repository:
-https://github.com/jfadev/jfa-ig-post/archive/refs/heads/main.zip
+In your Wordpress menu go to `Plugins > Add New` and search: `Jfa Social Media Post`
 
-- Upload the `jfa-ig-post.zip` file to your Wordpress:
+Or
+
+- Download the plugin from Github repository:
+https://github.com/jfadev/jfa-social-media-post/archive/refs/heads/main.zip
+
+- Rename to `jfa-social-media-post.zip` the file.
+
+- Upload the `jfa-social-media-post.zip` file to your Wordpress:
 https://yoursite.com/wp-admin/plugin-install.php
 
 - Activate the plugin.
 
-- Click on Instagram Post menu button:
+- Click on `Social Post` menu button:
 
-![Jfa Instagram Post](menu.jpg?raw=true "Jfa Instagram Post")
+![Social Media Post](assets/menu.jpg?raw=true "Social Media Post")
 
 ## Config
 
@@ -25,12 +32,12 @@ For example:
 
 ## Screenshot
 
-![Jfa Instagram Post](screenshot.jpg?raw=true "Jfa Instagram Post")
+![Social Media Post](assets/screenshot-1.jpg?raw=true "Social Media Post")
 
 ## Endpoint
 
 Access the post's JSON at the following endpoint:
-`GET /wp-json/api/v2/instagram_post/post/`
+`GET /wp-json/api/v2/social_media_post/post/`
 
 ##### Return
 ```
@@ -43,6 +50,14 @@ Access the post's JSON at the following endpoint:
   "timestamp": "2020-12-14T20:12:36+0000"
 }
 ```
+
+## Donate
+
+[https://jordifernandes.com/donate/](https://jordifernandes.com/donate/)
+
+## License
+
+[MIT License](LICENSE)
 
 ## Contributors
 

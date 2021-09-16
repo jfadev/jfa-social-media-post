@@ -1,4 +1,4 @@
-=== Jfa IG Post ===
+=== Jfa Social Media Post ===
 Contributors: @jfadev
 Donate link: https://jordifernandes.com/donate/
 Tags: Instagram
@@ -7,21 +7,26 @@ Tested up to: 5.4
 Stable tag: 4.3
 Requires PHP: 7.0
 License: MIT License
-License URI: https://github.com/jfadev/jfa-ig-post/blob/main/LICENSE
+License URI: https://github.com/jfadev/jfa-social-media-post/blob/main/LICENSE
 
 This WordPress plugin allows you to retrieve a specific Instagram post and consume it via the REST API.
 
 == Description ==
 
+This WordPress plugin allows you to retrieve a specific Instagram post and consume it via the REST API.
+Homepage: [https://jordifernandes.com/jfa-social-media-post/](https://jordifernandes.com/jfa-social-media-post/)
+
 ## Config
+
 Enter https://instant-tokens.com and create the `API URL` of your instagram account.
 
 For example:
 `https://ig.instant-tokens.com/users/XXXXXX/instagram/XXXXXX/token?userSecret=XXXXX`
 
 ## Endpoint
+
 Access the post's JSON at the following endpoint:
-`GET /wp-json/api/v2/instagram_post/post/`
+`GET /wp-json/api/v2/social_media_post/post/`
 
 ##### Return
 ```
@@ -34,6 +39,7 @@ Access the post's JSON at the following endpoint:
   "timestamp": "2020-12-14T20:12:36+0000"
 }
 ```
+
 == Frequently Asked Questions ==
 
 == Screenshots ==
