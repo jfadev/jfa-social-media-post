@@ -142,14 +142,12 @@ add_action('rest_api_init', function () {
 
 function api_social_media_post_post()
 {
-  return social_media_post_settings_get(true);
+  return social_media_post_settings_get();
 }
 
-function social_media_post_settings_get($from_api = false)
+function social_media_post_settings_get()
 {
-  $pre = $from_api ? '' : '../';
-  $json = file_get_contents($pre . __DIR__ . '/data.json');
-  return json_decode($json);
+  return json_decode(file_get_contents(__DIR__ . '/data.json'));
 }
 
 function social_media_post_settings_set($obj)
