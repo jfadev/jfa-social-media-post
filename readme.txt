@@ -1,10 +1,10 @@
 === Jfa Social Media Post ===
 Contributors: @jfadev
 Donate link: https://jordifernandes.com/donate/
-Tags: Instagram
-Requires at least: 4.7
-Tested up to: 5.4
-Stable tag: 4.3
+Tags: Instagram,Social Media
+Requires at least: 5.8
+Tested up to: 5.8
+Stable tag: 1.0.0
 Requires PHP: 7.0
 License: MIT License
 License URI: https://github.com/jfadev/jfa-social-media-post/blob/main/LICENSE

@@ -4,7 +4,7 @@
  * Plugin Name: Jfa Social Media Post
  * Plugin URI: https://jordifernandes.com/jfa-social-media-post/
  * Description: This WordPress plugin allows you to retrieve a specific Instagram post and consume it via the REST API.
- * Version: 1.0
+ * Version: 1.0.0
  * Author: Jordi Fernandes Alves
  * Author URI: https://jordifernandes.com/
  **/
@@ -46,7 +46,7 @@ function admin_social_media_post_page()
               <code>https://ig.instant-tokens.com/users/XXXXXX/instagram/XXXXXX/token?userSecret=XXXXX</code>
             </p>
             <label for="url_token">Instant Token API URL:</label><br>
-            <input type="url" name="url_token" value="<?php echo $settings->url_token ?>" style="width:418px">
+            <input type="url" name="url_token" value="<?php echo esc_attr($settings->url_token) ?>" style="width:418px">
             <h2>Post displayed</h2>
             <p>
               Enter the URL of the Instagram post to be displayed (post must belong to the user's account)<br>
@@ -54,7 +54,7 @@ function admin_social_media_post_page()
               <code>https://www.instagram.com/p/XXXXXXXXXX/</code>
             </p>
             <label for="permalink">URL:</label><br>
-            <input type="url" name="permalink" value="<?php echo $settings->permalink ?>" style="width:300px">
+            <input type="url" name="permalink" value="<?php echo esc_attr($settings->permalink) ?>" style="width:300px">
             <button type="submit" class="button button-primary">
               Save changes
             </button>
@@ -63,27 +63,27 @@ function admin_social_media_post_page()
           <p>Access the post's JSON at the following endpoint.</p>
           <p><code>/wp-json/api/v2/social_media_post/post/</code> <a href="/wp-json/api/v2/social_media_post/post/" target="_blank">view</a></p>
           <p>Return:<br>
-          <code>{"permalink":"", "caption":"", "media_url":"", "url_token":"", "username":"", "timestamp":""}</code>
+            <code>{"permalink":"", "caption":"", "media_url":"", "url_token":"", "username":"", "timestamp":""}</code>
           <h2>Info</h2>
-          Homepage: <a href="https://jordifernandes.com/jfa-social-media-post/" target="_blank">https://jordifernandes.com/jfa-social-media-post/</a><br> 
+          Homepage: <a href="https://jordifernandes.com/jfa-social-media-post/" target="_blank">https://jordifernandes.com/jfa-social-media-post/</a><br>
           Donate: <a href="https://jordifernandes.com/donate/" target="_blank">https://jordifernandes.com/donate/</a><br>
         </div>
         <div style="grid-column:3;grid-row:1;">
           <?php if ($settings && $settings->media_url) { ?>
             <h3>Preview: </h3>
-            <img src="<?php echo $settings->media_url ?>" width="200px"><br><br>
+            <img src="<?php echo esc_url($settings->media_url) ?>" width="200px"><br><br>
             <b>Permalink: </b><br>
-            <a href="<?php echo $settings->permalink ?>" target="_blank">
-              <?php echo $settings->permalink ?>
+            <a href="<?php echo esc_url($settings->permalink) ?>" target="_blank">
+              <?php echo esc_html($settings->permalink) ?>
             </a><br><br>
             <b>Username: </b>
-            <a href="<?php echo "https://www.instagram.com/{$settings->username}/" ?>" target="_blank">
-              @<?php echo $settings->username ?>
+            <a href="<?php echo esc_url("https://www.instagram.com/{$settings->username}/") ?>" target="_blank">
+              @<?php echo esc_html($settings->username) ?>
             </a><br><br>
             <b>Date: </b>
-            <?php echo $settings->timestamp ?><br><br>
+            <?php echo esc_html($settings->timestamp) ?><br><br>
             <b>Caption: </b><br>
-            <?php echo $settings->caption ?>
+            <?php echo esc_html($settings->caption) ?>
           <?php } ?>
         </div>
       </div>
@@ -148,11 +148,11 @@ function api_social_media_post_post()
 function social_media_post_settings_get($from_api = false)
 {
   $pre = $from_api ? '' : '../';
-  $json = file_get_contents($pre . 'wp-content/plugins/jfa-social-media-post/data.json');
+  $json = file_get_contents($pre . __DIR__ . '/data.json');
   return json_decode($json);
 }
 
 function social_media_post_settings_set($obj)
 {
-  file_put_contents('wp-content/plugins/jfa-social-media-post/data.json', json_encode($obj));
+  file_put_contents(__DIR__ . '/data.json', json_encode($obj));
 }
