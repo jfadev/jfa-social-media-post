@@ -1,4 +1,4 @@
-# jfa-social-media-post (Jfa Social Media Post)
+# Jfa Social Media Post
 
 This WordPress plugin allows you to retrieve a specific Instagram post and consume it via the REST API.
 Homepage: [https://jordifernandes.com/jfa-social-media-post/](https://jordifernandes.com/jfa-social-media-post/)
@@ -6,6 +6,11 @@ Homepage: [https://jordifernandes.com/jfa-social-media-post/](https://jordiferna
 ## Install
 
 In your Wordpress menu go to `Plugins > Add New` and search: `Jfa Social Media Post`
+
+Or
+
+Download from WordPress.org
+https://wordpress.org/plugins/jfa-social-media-post
 
 Or
 
