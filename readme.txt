@@ -29,7 +29,7 @@ Access the post's JSON at the following endpoint:
 `GET /wp-json/api/v2/social_media_post/post/`
 
 ##### Return
-```
+`
 {
   "permalink": "https://www.instagram.com/p/XXXXXXXXXXXX/",
   "caption": "Caption text",
@@ -38,7 +38,7 @@ Access the post's JSON at the following endpoint:
   "username": "XXXXXXXX",
   "timestamp": "2020-12-14T20:12:36+0000"
 }
-```
+`
 
 == Frequently Asked Questions ==
 
