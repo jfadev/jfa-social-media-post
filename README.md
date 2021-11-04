@@ -46,7 +46,7 @@ Access the post's JSON at the following endpoint:
 `GET /wp-json/api/v2/social_media_post/post/`
 
 ##### Return
-```
+```javascript
 {
   "permalink": "https://www.instagram.com/p/XXXXXXXXXXXX/",
   "caption": "Caption text",
