@@ -1,3 +1,5 @@
+![Jfa Social Media Post](assets/banner-1544x500.jpg?raw=true "Jfa Social Media Post")
+
 # Jfa Social Media Post
 
 This WordPress plugin allows you to retrieve a specific Instagram post and consume it via the REST API.
